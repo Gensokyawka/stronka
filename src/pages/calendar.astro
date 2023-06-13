@@ -11,5 +11,16 @@ const events = entries.map(x => ({
 ---
 
 <Layout title="Welcome to Astro.">
-  <CalendarC events={events} client:load />
+  <main>
+    <article class="article">
+      <CalendarC events={events} client:load />
+    </article>
+  </main>
 </Layout>
+
+<style>
+  .article {
+    max-width: 48em;
+    margin-inline: auto;
+  }
+</style>

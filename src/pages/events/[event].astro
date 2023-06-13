@@ -22,7 +22,7 @@ const { Content } = await entry.render();
 
 <Layout title="Title">
   <main>
-    <article>
+    <article class="article">
       <header>
         <h1>{entry.data.title}</h1>
         <small>{entry.data.start} - {entry.data.end}</small>
@@ -34,3 +34,10 @@ const { Content } = await entry.render();
     </article>
   </main>
 </Layout>
+
+<style>
+  .article {
+    max-width: 48em;
+    margin-inline: auto;
+  }
+</style>
