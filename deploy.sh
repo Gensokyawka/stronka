@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pnpm build
+rsync -qi -Pavz -e "ssh -i ~/.ssh/id_ed25519" ./dist/ 70.34.244.173:/var/www/touhou.kamoshi.org --delete
+echo "Done"
