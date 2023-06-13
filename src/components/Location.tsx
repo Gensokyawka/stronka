@@ -1,4 +1,4 @@
-import { Map, TileLayer, Marker } from "leaflet";
+import { Map, TileLayer, Marker, Icon } from "leaflet";
 import { onMount } from "solid-js";
 
 
@@ -20,7 +20,11 @@ export default function Location(props: Props) {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }))
-      .addLayer(new Marker(latlon));
+      .addLayer(new Marker(latlon, { icon: new Icon({
+        iconUrl: "/marker-icon-2x.png",
+        iconSize: [20, 30],
+        iconAnchor: [10, 30],
+      }) }));
   })
 
   return <div id="map" style="height:20em;"></div>
