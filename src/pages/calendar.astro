@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CalendarC from "../components/Calendar";
+import { getCollection } from "astro:content";
+
+
+const events = (await getCollection('events')).map(x => x.data);
+---
+
+<Layout title="Welcome to Astro.">
+  <CalendarC events={events} client:load />
+</Layout>
