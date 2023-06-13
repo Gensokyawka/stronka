@@ -1,4 +1,5 @@
 ---
+import Card from "../../components/Card.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -6,7 +7,28 @@ const posts = await getCollection('posts');
 ---
 
 <Layout title="Posty">
-  {posts.map(post => 
-    <a href={post.slug}>{post.slug}</a>
-  )}
+  <main>
+    <article class="article">
+      <header>
+        <h1>Posty</h1>
+      </header>
+
+      <section>
+        {posts.map(post => 
+          <Card 
+            title={post.data.title}
+            body={`${post.data.date}`}
+            href={`/posts/${post.slug}/`}
+          />
+        )}
+      </section>
+    </article>
+  </main>
 </Layout>
+
+<style>
+  .article {
+    max-width: 48em;
+    margin-inline: auto;
+  }
+</style>

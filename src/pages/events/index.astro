@@ -1,12 +1,38 @@
 ---
+import Card from "../../components/Card.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection('events');
----
 
+
+function createBody(e: {start: Date, end: Date}): string {
+  return `${e.start} - ${e.end}`;
+}
+---
 <Layout title="Posty">
-  {posts.map(post => 
-    <a href={post.slug}>{post.slug}</a>
-  )}
+  <main>
+    <article class="article">
+      <header>
+        <h1>Wydarzenia</h1>
+      </header>
+
+      <section>
+        {posts.map(post => 
+          <Card 
+            title={post.data.title}
+            body={createBody(post.data)}
+            href={`/events/${post.slug}/`}
+          />
+        )}
+      </section>
+    </article>
+  </main>
 </Layout>
+
+<style>
+  .article {
+    max-width: 48em;
+    margin-inline: auto;
+  }
+</style>

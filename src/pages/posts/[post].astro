@@ -18,5 +18,14 @@ const { Content } = await entry.render();
 ---
 
 <Layout title="Title">
-  <Content />
+  <main>
+    <article>
+      <header>
+        <h1>{entry.data.title}</h1>
+      </header>
+      <section>
+        <Content />
+      </section>
+    </article>
+  </main>
 </Layout>

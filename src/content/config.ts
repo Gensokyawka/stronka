@@ -17,7 +17,8 @@ export const collections = {
   posts: defineCollection({
     type: 'content',
     schema: z.object({
-      title: z.string()
+      title: z.string(),
+      date: z.coerce.date(),
     })
   })
 };

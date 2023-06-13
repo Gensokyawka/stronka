@@ -21,6 +21,16 @@ const { Content } = await entry.render();
 </script>
 
 <Layout title="Title">
-  <Content />
-  <Location location={entry.data.location} client:only />
+  <main>
+    <article>
+      <header>
+        <h1>{entry.data.title}</h1>
+        <small>{entry.data.start} - {entry.data.end}</small>
+      </header>
+      <section>
+        <Content />
+      </section>
+      <Location location={entry.data.location} client:only />
+    </article>
+  </main>
 </Layout>
