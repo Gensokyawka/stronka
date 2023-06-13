@@ -3,8 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import CalendarC from "../components/Calendar";
 import { getCollection } from "astro:content";
 
-
-const events = (await getCollection('events')).map(x => x.data);
+const entries = await getCollection('events');
+const events = entries.map(x => ({
+  ...x.data,
+  url: `/events/${x.slug}/`,
+}));
 ---
 
 <Layout title="Welcome to Astro.">

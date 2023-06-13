@@ -1,14 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Location from "../../components/Location";
 import type { InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
 
-
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('posts');
+  const blogEntries = await getCollection('events');
   return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+    params: { event: entry.slug }, props: { entry },
   }));
 }
 
@@ -16,7 +16,11 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
+<script>
+  import "leaflet/dist/leaflet.css";
+</script>
 
 <Layout title="Title">
   <Content />
+  <Location location={entry.data.location} client:only />
 </Layout>
