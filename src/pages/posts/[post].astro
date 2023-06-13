@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import type { InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
+import { formatDate } from "../../utils";
 
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
@@ -22,7 +23,7 @@ const { Content } = await entry.render();
     <article class="article">
       <header>
         <h1>{entry.data.title}</h1>
-        <small>{entry.data.date}</small>
+        <small>{formatDate(entry.data.date)}</small>
       </header>
       <section>
         <Content />

@@ -34,16 +34,21 @@ const pages = [
 
 <style lang="scss">
   .list {
+    margin: 0;
+    padding: 0;
     display: flex;
     gap: 1em;
     list-style: none;
   }
 
   .link {
-    padding: 1em;
+    display: block;
+    padding: 0.5em;
+    color: rgb(var(--accent));
+    text-decoration: unset;
 
     &:hover {
-      background-color: gray;
+      background-color: rgba(128, 128, 128, 0.2);
     }
   }
 </style>

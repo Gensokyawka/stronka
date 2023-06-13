@@ -2,12 +2,15 @@
 import Card from "../../components/Card.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { formatDate } from "../../utils";
 
-const posts = await getCollection('events');
+
+const posts = (await getCollection('events'))
+  .sort((a, b) => a.data.start < b.data.start ? -1 : 1);
 
 
 function createBody(e: {start: Date, end: Date}): string {
-  return `${e.start} - ${e.end}`;
+  return `${formatDate(e.start)} - ${formatDate(e.end)}`;
 }
 ---
 <Layout title="Posty">

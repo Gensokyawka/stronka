@@ -17,6 +17,9 @@ dependencies:
   '@fullcalendar/interaction':
     specifier: ^6.1.8
     version: 6.1.8(@fullcalendar/core@6.1.8)
+  '@js-temporal/polyfill':
+    specifier: ^0.4.4
+    version: 0.4.4
   astro:
     specifier: ^2.5.6
     version: 2.5.6(sass@1.63.3)
@@ -640,6 +643,14 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: false
+
+  /@js-temporal/polyfill@0.4.4:
+    resolution: {integrity: sha512-2X6bvghJ/JAoZO52lbgyAPFj8uCflhTo2g7nkFzEQdXd/D8rEeD4HtmTEpmtGCva260fcd66YNXBOYdnmHqSOg==}
+    engines: {node: '>=12'}
+    dependencies:
+      jsbi: 4.3.0
+      tslib: 2.5.3
     dev: false
 
   /@ljharb/has-package-exports-patterns@0.0.2:
@@ -1751,6 +1762,10 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
+    dev: false
+
+  /jsbi@4.3.0:
+    resolution: {integrity: sha512-SnZNcinB4RIcnEyZqFPdGPVgrg2AcnykiBy0sHVJQKHYeaLUvi3Exj+iaPpLnFVkDPZIV4U0yvgC9/R4uEAZ9g==}
     dev: false
 
   /jsesc@2.5.2:
