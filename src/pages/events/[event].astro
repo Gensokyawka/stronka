@@ -29,7 +29,7 @@ const { Content } = await entry.render();
         <h1>{entry.data.title}</h1>
         <small>{formatDate(entry.data.start)} - {formatDate(entry.data.end)}</small>
       </header>
-      <section>
+      <section class="markdown">
         <Content />
       </section>
       <Location location={entry.data.location} client:only />
