@@ -15,6 +15,7 @@
     "@fullcalendar/daygrid": "^6.1.8",
     "@fullcalendar/interaction": "^6.1.8",
     "astro": "^2.5.6",
+    "sass": "^1.63.3",
     "solid-js": "^1.4.3"
   }
 }

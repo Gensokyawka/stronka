@@ -1,0 +1,45 @@
+---
+const pages = [
+  {
+    name: "Strona główna",
+    href: "/"
+  },
+  {
+    name: "Posty",
+    href: "/posts/"
+  },
+  {
+    name: "Kalendarz",
+    href: "/calendar/"
+  }
+]
+---
+
+<nav class="navbar">
+  <ul class="list">
+    {pages.map(page => (
+      <li>
+        <a class="link" href={page.href}>
+          {page.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+
+<style lang="scss">
+  .list {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+  }
+
+  .link {
+    padding: 1em;
+
+    &:hover {
+      background-color: gray;
+    }
+  }
+</style>

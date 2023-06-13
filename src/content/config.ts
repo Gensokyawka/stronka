@@ -10,4 +10,10 @@ export const collections = {
       end: z.coerce.date(),
     })
   }),
+  posts: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string()
+    })
+  })
 };

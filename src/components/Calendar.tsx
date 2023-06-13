@@ -10,6 +10,8 @@ export default function CalendarComponent(props: { events: any[] }) {
     initialView: 'dayGridMonth',
     editable: false,
     events: props.events,
+    locale: "pl-PL",
+    firstDay: 1,
   }).render())
 
   return <div id="calendar"></div>
