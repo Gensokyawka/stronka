@@ -2,6 +2,7 @@ import { onMount } from "solid-js";
 import { Calendar } from '@fullcalendar/core'
 import interactionPlugin from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import locale from '@fullcalendar/core/locales/pl';
 
 
 export default function CalendarComponent(props: { events: any[] }) {
@@ -10,8 +11,8 @@ export default function CalendarComponent(props: { events: any[] }) {
     initialView: 'dayGridMonth',
     editable: false,
     events: props.events,
-    locale: "pl-PL",
     firstDay: 1,
+    locale,
   }).render())
 
   return <div id="calendar"></div>
